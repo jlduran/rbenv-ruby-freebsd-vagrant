@@ -15,5 +15,5 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision 'shell', privileged: false,
                                path: './scripts/user.sh',
-                               args: '#{versions[:ruby]}"
+                               args: versions[:ruby].to_s
 end
