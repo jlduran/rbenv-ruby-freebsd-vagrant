@@ -8,6 +8,11 @@ lint_scripts_task:
   check_su_script: shellcheck $CIRRUS_WORKING_DIR/scripts/su.sh
   check_user_script: shellcheck $CIRRUS_WORKING_DIR/scripts/user.sh
 
+lint_vagrantfile_task:
+  install_rubocop_script: pkg install -y rubygem-rubocop
+
+  check_vagrantfile_script: rubocop $CIRRUS_WORKING_DIR/Vagrantfile
+
 run_scripts_task:
   install_script: sh .ci/vagrant.sh
 
