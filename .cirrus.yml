@@ -1,0 +1,15 @@
+freebsd_instance:
+  image: freebsd-12-0-release-amd64
+
+lint_scripts_task:
+  install_shellcheck_script: pkg install -y hs-ShellCheck
+
+  check_vagrant_script: shellcheck $CIRRUS_WORKING_DIR/.ci/vagrant.sh
+  check_su_script: shellcheck $CIRRUS_WORKING_DIR/scripts/su.sh
+  check_user_script: shellcheck $CIRRUS_WORKING_DIR/scripts/user.sh
+
+run_scripts_task:
+  install_script: sh .ci/vagrant.sh
+
+  su_script: sh $CIRRUS_WORKING_DIR/scripts/su.sh
+  user_script: su -m vagrant -c "sh $CIRRUS_WORKING_DIR/scripts/user.sh 2.6.0-rc1"
