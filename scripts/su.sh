@@ -4,9 +4,11 @@ freebsd-update fetch install --not-running-from-cron
 
 # Use the latest package repository
 mkdir -p /usr/local/etc/pkg/repos
-# shellcheck disable=SC2016
-echo 'FreeBSD: { url: "pkg+http://pkg.FreeBSD.org/${ABI}/latest" }' > \
-	/usr/local/etc/pkg/repos/FreeBSD.conf
+cat > /usr/local/etc/pkg/repos/FreeBSD.conf << END
+FreeBSD: {
+  url: "pkg+http://pkg.FreeBSD.org/${ABI}/latest"
+}
+END
 
 # Upgrade and install required packages
 pkg upgrade -y
