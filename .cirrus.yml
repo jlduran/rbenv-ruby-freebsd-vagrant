@@ -17,4 +17,4 @@ run_scripts_task:
   install_script: sh .ci/vagrant.sh
 
   su_script: sh $CIRRUS_WORKING_DIR/scripts/su.sh
-  user_script: su -m vagrant -c "sh $CIRRUS_WORKING_DIR/scripts/user.sh 2.6.0-rc1"
+  user_script: su -m vagrant -c "sh $CIRRUS_WORKING_DIR/scripts/user.sh 2.6.0"
