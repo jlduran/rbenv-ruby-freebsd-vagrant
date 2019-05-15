@@ -7,8 +7,7 @@ eval "$(rbenv init -)"
 END
 
 # Install Ruby as the vagrant user
-RUBY_CONFIGURE_OPTS="--disable-install-doc --with-opt-dir=/usr/local" \
-	rbenv install "$1"
+RUBY_CONFIGURE_OPTS=--disable-install-doc rbenv install "$1"
 rbenv global "$1"
 
 # Disable gems' documentation
