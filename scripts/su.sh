@@ -12,8 +12,8 @@ END
 
 # Upgrade and install required packages
 pkg upgrade -y
-pkg install -y bash git-lite gmp libedit libffi libunwind libyaml rbenv \
-	ruby-build
+pkg install -y bash git-lite gmp libedit libffi libunwind libyaml pkgconf \
+	rbenv ruby-build
 
 # Change vagrant's default shell to Bash
 pw usermod vagrant -s /usr/local/bin/bash
