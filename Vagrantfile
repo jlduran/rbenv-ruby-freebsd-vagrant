@@ -1,4 +1,4 @@
-versions = { freebsd: '12.0', ruby: '2.6.3' }
+versions = { freebsd: '12.0', ruby: '2.6.4' }
 
 Vagrant.configure(2) do |config|
   config.vm.box = "freebsd/FreeBSD-#{versions[:freebsd]}-RELEASE"
